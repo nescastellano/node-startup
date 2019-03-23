@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NodeJs</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="icon" href="/img/weather.png">
+        
+    </head>
+    
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <img id="flagVen" src="../img/Flag_of_Venezuela.svg.png">
+
+            <form>
+                <input placeholder="ubicacion">
+                <button>Search</button>
+            </form>
+            <p id="message-1"></p>
+            <p id="message-2" style="color:red"></p>
+        </div>
+         {{>footer}}
+
+         <script src="../js/1-script.js"></script>
+    </body>
+</html>

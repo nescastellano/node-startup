@@ -1,0 +1,49 @@
+body{
+    columns: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    width:750px;
+    margin: 0% auto;
+    padding:0 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main-content{
+    flex-grow:1;
+}
+header{
+    margin-top:15px;
+    margin-bottom: 25px;
+}
+h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+header a{
+    color:#888888;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.portrait{
+   width:200px; 
+}
+#flagVen{
+    width:200px;
+}
+footer{
+    color:#888888;
+    padding:10px 0px;
+    margin-top:10px;
+    border-top: 1px solid #eeeeee;
+}
+input{
+    border:1px solid #cccccc;
+    padding:5px;
+}
+button{
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: lightgrey;
+    color: white;
+    font-weight: 800;
+}
