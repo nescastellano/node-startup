@@ -1,32 +1,31 @@
 console.log('Javascript esta cargado')
 
-// fetch('http://puzzle.mead.io/puzzle').then((response)=>{
-//     response.json().then((data)=>{
-//         console.log(data)
-//     })
-// })
-
-
 const search = document.querySelector('input')
 const weatherForm = document.querySelector('form')
 const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-1')
-
-
+const messageTwo = document.querySelector('#message-2')
 
 weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault()
-    messageOne.textContent =""
-    messageTwo.textContent =""
 
     const location = search.value
+
+    messageOne.innerHTML="Cargando..."
+    messageTwo.textContent =""
+
         fetch('/weather?address='+location).then((response)=>{
          response.json().then((data)=>{
                 if(data.error){
-                    return messageTwo.textContent = data.error
-                }
+                    messageOne.innerHTML=""
+                    return messageTwo.innerHTML = data.error
+                } else {
+                    
                 var weather = data.forecast.data
-                messageOne.textContent+=weather.summary+" "+data.location
+                messageOne.innerHTML=data.location+'<br><br>'                
+                messageOne.innerHTML+=weather.hourly.summary+"<br>"
+                messageOne.innerHTML+="La temperatura es de <b>"+weather.currently.apparentTemperature+"º</b> y la probabilidad de precipitacion es de <b>"+weather.currently.precipProbability+"%</b><br>"
+            }
+
         })
     })
 

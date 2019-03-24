@@ -61,7 +61,7 @@ app.get('/products',(req,res)=>{
 app.get('/weather', (req, res) => {
     if(!req.query.address){
         return res.send({
-            error:"You most provide an address to parse information"
+            error:"Debe indicar una ubicacion para mostrar la informacion del clima."
         })
     }
     
