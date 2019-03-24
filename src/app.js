@@ -7,6 +7,8 @@ const geocoding = require('./utils/geocode')
 // utils end
 
 const app = express()
+// for heroku y defaut
+const port = process.env.PORT  || 3000
 
 // Definir PATH para express
 const publicPath = path.join(__dirname, '../public')
@@ -94,6 +96,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
